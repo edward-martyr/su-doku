@@ -38,8 +38,20 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Games/Entertainment :: Board Games",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.10"
+dependencies = ["numpy~=1.25"]
+
+[project.optional-dependencies]
+dev = ["mypy", "isort", "black", "poethepoet", "sphinx"]
+
+[tool.poe.tasks]
+mypy = { cmd = "mypy src", help = "Type check" }
+isort = { cmd = "isort . --check --diff", help = "Sort imports" }
+black = { cmd = "black . --check --diff", help = "Format code" }
+lint = [{ ref = "mypy" }, { ref = "isort" }, { ref = "black" }]
+docs = { shell = "cd docs && make html", help = "Build documentation" }
 
 [project.urls]
-"Homepage" = "https://github.com/edward-martyr/su-doku"
+"Repository" = "https://github.com/edward-martyr/su-doku"
 "Bug Tracker" = "https://github.com/edward-martyr/su-doku/issues"
+"Documentation" = "https://www.nyoeghau.com/su-doku"

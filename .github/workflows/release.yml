@@ -1,4 +1,4 @@
-name: release
+name: Release
 
 on:
   release:
@@ -33,7 +33,7 @@ jobs:
           .
 
       - name: Publish distribution package to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
 
@@ -58,6 +58,6 @@ jobs:
 
       - name: Publish distribution package to PyPI post-release
         if: ${{ failure() }}
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
