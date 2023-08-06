@@ -133,6 +133,12 @@ class Sudoku(Matrix[Unsigned]):
         np.random.shuffle(candidates)
         return candidates
 
+    def solve(self) -> Optional[Sudoku]:
+        """
+        Solves the Sudoku puzzle.
+        """
+        return Sudoku(self, _verify=False).solve_inplace()
+
     def solve_inplace(self) -> Optional[Sudoku]:
         """
         Solves the Sudoku puzzle in-place.
