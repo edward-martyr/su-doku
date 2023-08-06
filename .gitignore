@@ -1,0 +1,6 @@
+__pycache__/
+/.mypy_cache/
+/build/
+*.so
+*.egg-info/
+/docs/

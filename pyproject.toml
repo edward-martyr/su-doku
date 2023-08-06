@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=7", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+
+[tool.isort]
+multi_line_output = 3
+combine_as_imports = true
+line_length = 88
+profile = "black"
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+disable_error_code = []
+ignore_missing_imports = true
+show_error_codes = true
+
+[project]
+name = "su-doku"
+authors = [
+    { name = "Yuanhao 'Nyoeghau' Chen", email = "nyoeghau@nyoeghau.com" },
+]
+description = "Sudoku solver and generator"
+dynamic = ["version"]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Development Status :: 1 - Planning",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Games/Entertainment :: Board Games",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/edward-martyr/su-doku"
+"Bug Tracker" = "https://github.com/edward-martyr/su-doku/issues"
