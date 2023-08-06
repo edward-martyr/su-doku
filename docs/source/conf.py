@@ -3,7 +3,7 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-from importlib.metadata import version
+from importlib.metadata import version as get_version
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -11,7 +11,7 @@ from importlib.metadata import version
 project = "su-doku"
 copyright = "2023, Yuanhao Chen"
 author = "Yuanhao Chen"
-release = version(project)
+release = get_version(project)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
