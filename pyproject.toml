@@ -25,6 +25,7 @@ show_error_codes = true
 
 [project]
 name = "su-doku"
+keywords = ["sudoku", "board game", "puzzle", "numpy", "backtracking"]
 authors = [
     { name = "Yuanhao 'Nyoeghau' Chen", email = "nyoeghau@nyoeghau.com" },
 ]
@@ -42,7 +43,7 @@ requires-python = ">=3.10"
 dependencies = ["numpy~=1.25"]
 
 [project.optional-dependencies]
-dev = ["mypy", "isort", "black", "poethepoet", "sphinx"]
+dev = ["black", "isort", "mypy", "poethepoet", "sphinx"]
 
 [tool.poe.tasks]
 mypy = { cmd = "mypy src", help = "Type check" }
